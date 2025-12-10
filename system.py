@@ -59,7 +59,7 @@ case_manager_id = user.get("case_manager")  # 例如 "wang", "lily123", None
    #     prescription = patient_pres_list[-1]  # 最新一筆
 prescription = {
         "開立日期": "2025-12-9",
-        "個管師": user.get("case_manager", "高曼玉") ,
+        "個管師": "高曼玉" ,
         "處方內容": ["每天散步20分鐘，坐在椅子上做起立訓練，一天20下，每周至少參加1次社區活動或課程訓練"]
     }
 
@@ -135,7 +135,7 @@ if st.session_state.page in ["運動場地", "活動推廣"]:
         )
 # 模擬運動紀錄
 if len(st.session_state.records) == 0:
-    exercises = ["散步", "慢跑", "瑜珈", "重量訓練", "打太極", "跳舞", "游泳", "肌力訓練"]
+    exercises = ["散步"]
     for i in range(1, 40):
         dt = datetime.date.today() - datetime.timedelta(days=i)
         ex = random.choice(exercises)
@@ -159,7 +159,7 @@ def available_points():
 with st.sidebar:
     
     st.title(f"Hi！{st.session_state.user_name}")
-    st.metric("目前可用點數(範例資料)", f"{available_points():,} 點")
+    st.metric("目前可用點數", f"{available_points():,} 點")
     st.divider()
 
     # 4 個超大按鈕
@@ -445,6 +445,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

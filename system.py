@@ -38,7 +38,7 @@ prescriptions_all = load_json(PRESCRIPTION_FILE)
 
 # 取得這位長者的完整資料
 user = patients_data.get(CURRENT_PATIENT_ID, {
-    "name": "陳小美",
+    "name": "王聖德",
     "total_points_auto": 0,
     "total_points_pending": 0,
     "total_points_approved": 0,
@@ -441,6 +441,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

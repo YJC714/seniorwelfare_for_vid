@@ -155,7 +155,7 @@ if not st.session_state.redeemed:
 def available_points():
      #return st.session_state.total_points - sum(r["點數"] for r in st.session_state.redeemed)
      #return st.session_state.total_points
-     return 0
+     return 30
 
 
 # ====================== 左側選單：4 個超大按鈕 ======================
@@ -257,10 +257,10 @@ if st.session_state.page == "運動紀錄":
     # saved_medical_cost = 2850
     # biological_age = 62
     # beat_percentage = 87
-    reduced_bed_days = 0
-    saved_medical_cost = 0
-    biological_age = 63
-    beat_percentage = 0
+    reduced_bed_days = 18
+    saved_medical_cost = 3000
+    biological_age = 62
+    beat_percentage = 50
 
     col1, col2, col3 = st.columns(3)
 
@@ -311,9 +311,10 @@ if st.session_state.page == "運動紀錄":
     st.plotly_chart(fig, use_container_width=True)
 
     st.divider()
-    st.metric("可用點數", f"{available_points():,} 點", "總累積0點")
-
-    #st.dataframe(df.head(20)[["日期", "運動", "分鐘數", "點數"]], use_container_width=True, hide_index=True)
+    st.metric("可用點數", f"{available_points():,} 點", "總累積30點")
+    df1 = pd.DataFrame({"月份": ["12月"],
+                       "點數": ["30點"]})
+    st.dataframe(df1.head(20)[["月份", "點數"]], use_container_width=True, hide_index=True)
 
 
 # ────────────────────── 點數兌換 ──────────────────────
@@ -462,6 +463,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

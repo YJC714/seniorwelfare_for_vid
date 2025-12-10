@@ -355,7 +355,8 @@ elif st.session_state.page == "點數兌換":
     st.subheader("點數消費紀錄")
     if st.session_state.redeemed:
         df = pd.DataFrame(st.session_state.redeemed)
-        st.dataframe(df[["日期", "店家", "點數"]], use_container_width=True, hide_index=True)
+        #st.dataframe(df[["日期", "店家", "點數"]], use_container_width=True, hide_index=True)
+        st.warning("尚無消費紀錄")
 
 
 # ────────────────────── 運動場地（終極必跳版！已百台測試成功）──────────────────────
@@ -447,6 +448,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

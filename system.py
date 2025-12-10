@@ -159,7 +159,7 @@ def available_points():
 with st.sidebar:
     
     st.title(f"Hi！{st.session_state.user_name}")
-    st.metric("目前可用點數", f"{available_points():,} 點")
+    st.metric("目前可用點數(範例資料)", f"{available_points():,} 點")
     st.divider()
 
     # 4 個超大按鈕
@@ -250,10 +250,14 @@ if st.session_state.page == "運動紀錄":
     st.subheader("因為你的運動，已經為健康帶來這些改變！")
 
     # 假資料但超有感（可隨時改數字）
-    reduced_bed_days = 18
-    saved_medical_cost = 2850
-    biological_age = 62
-    beat_percentage = 87
+    # reduced_bed_days = 18
+    # saved_medical_cost = 2850
+    # biological_age = 62
+    # beat_percentage = 87
+    reduced_bed_days = 0
+    saved_medical_cost = 0
+    biological_age = 63
+    beat_percentage = 0
 
     col1, col2, col3 = st.columns(3)
 
@@ -279,15 +283,15 @@ if st.session_state.page == "運動紀錄":
         st.metric(
             label="你的身體年齡",
             value=f"{biological_age} 歲",
-            delta=f"比實際年齡年輕 {user.get('age', 75) - biological_age} 歲！"
+            delta=f"比實際年齡年輕 {user.get('age', 63) - biological_age} 歲！"
         )
         
         st.markdown(f"<small style='color:green'>已經超越 {beat_percentage}% 的同齡人！持續保持，你會越來越年輕！</small>", unsafe_allow_html=True)
 
-    # 可愛的小彩蛋
-    #st.balloons()
+    
     st.caption("以上數據根據國健署、美國心臟協會等研究推估，持續運動真的會讓你更健康、更省錢、更有活力喔～")
-    st.subheader("各運動累積分鐘數")
+    st.subheader("各運動累積分鐘數(範例資料)")
+    
 
     import plotly.express as px
     fig = px.bar(
@@ -441,6 +445,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

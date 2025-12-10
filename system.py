@@ -136,13 +136,14 @@ if st.session_state.page in ["運動場地", "活動推廣"]:
 # 模擬運動紀錄
 if len(st.session_state.records) == 0:
     exercises = ["散步"]
-    for i in range(1, 40):
-        dt = datetime.date.today() - datetime.timedelta(days=i)
-        ex = random.choice(exercises)
-        mins = random.randint(20, 90)
-        points = mins * (2 if ex in ["慢跑", "重量訓練", "跳舞", "游泳", "肌力訓練"] else 1)
-        st.session_state.records.append({"日期": dt, "運動": ex, "分鐘數": mins, "點數": points})
-        st.session_state.total_points += points
+    # for i in range(1, 40):
+    #     dt = datetime.date.today() - datetime.timedelta(days=i)
+    #     ex = random.choice(exercises)
+    #     mins = random.randint(20, 90)
+    dt=datetime.date.today()
+    points = mins * (2 if ex in ["慢跑", "重量訓練", "跳舞", "游泳", "肌力訓練"] else 1)
+    st.session_state.records.append({"日期": dt, "運動": ex, "分鐘數": mins, "點數": points})
+    st.session_state.total_points += points
 
 if not st.session_state.redeemed:
     st.session_state.redeemed = [
@@ -445,6 +446,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

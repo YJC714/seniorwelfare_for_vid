@@ -311,7 +311,7 @@ if st.session_state.page == "運動紀錄":
     st.plotly_chart(fig, use_container_width=True)
 
     st.divider()
-    st.metric("可用點數", f"{available_points():,} 點", f"總累積 {st.session_state.total_points:,} 點")
+    #st.metric("可用點數", f"{available_points():,} 點", f"總累積 {st.session_state.total_points:,} 點")
 
     st.dataframe(df.head(20)[["日期", "運動", "分鐘數", "點數"]], use_container_width=True, hide_index=True)
 
@@ -331,8 +331,10 @@ elif st.session_state.page == "點數兌換":
     with col_m2:
         st.metric(
             "累積折抵金額", 
-            f" {money_saved_twd:,} 元", 
-            f"已折抵 {total_redeemed_points:,} 點"
+           # f" {money_saved_twd:,} 元", 
+           # f"已折抵 {total_redeemed_points:,} 點"
+            "0元",
+            "已折抵0點"
         )
     
     
@@ -340,7 +342,7 @@ elif st.session_state.page == "點數兌換":
     st.success("店家直接掃描下方條碼，系統會自動辨識店家並折抵！")
 
     with st.form("兌換"):
-        points = st.number_input("欲兌換點數", min_value=10, max_value=available_points(), step=10, value=20)
+        points = st.number_input("欲兌換點數", min_value=10, max_value=available_points(), step=10, value=0)
         submit = st.form_submit_button("產生兌換條碼", type="primary", use_container_width=True)
 
     if submit:
@@ -460,6 +462,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

@@ -140,7 +140,7 @@ if len(st.session_state.records) == 0:
     #     dt = datetime.date.today() - datetime.timedelta(days=i)
     #     ex = random.choice(exercises)
     mins = 20
-    dt=datetime.date.today()
+    dt=2025-12-09
     ex = random.choice(exercises)
     points = mins * (2 if ex in ["慢跑", "重量訓練", "跳舞", "游泳", "肌力訓練"] else 1)
     st.session_state.records.append({"日期": dt, "運動": ex, "分鐘數": mins, "點數": points})
@@ -292,7 +292,7 @@ if st.session_state.page == "運動紀錄":
 
     
     st.caption("以上數據根據國健署、美國心臟協會等研究推估，持續運動真的會讓你更健康、更省錢、更有活力喔～")
-    st.subheader("各運動累積分鐘數(範例資料)")
+    st.subheader("各運動累積分鐘數")
     
 
     import plotly.express as px
@@ -459,6 +459,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

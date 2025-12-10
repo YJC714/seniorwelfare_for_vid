@@ -139,7 +139,7 @@ if len(st.session_state.records) == 0:
     # for i in range(1, 40):
     #     dt = datetime.date.today() - datetime.timedelta(days=i)
     #     ex = random.choice(exercises)
-    #     mins = random.randint(20, 90)
+    mins = 20
     dt=datetime.date.today()
     ex = random.choice(exercises)
     points = mins * (2 if ex in ["慢跑", "重量訓練", "跳舞", "游泳", "肌力訓練"] else 1)
@@ -447,6 +447,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

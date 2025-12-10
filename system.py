@@ -339,7 +339,7 @@ elif st.session_state.page == "點數兌換":
     st.success("店家直接掃描下方條碼，系統會自動辨識店家並折抵！")
 
     with st.form("兌換"):
-        points = st.number_input("欲兌換點數", min_value=10, max_value=available_points(), step=10, value=50)
+        points = st.number_input("欲兌換點數", min_value=10, max_value=available_points(), step=10, value=20)
         submit = st.form_submit_button("產生兌換條碼", type="primary", use_container_width=True)
 
     if submit:
@@ -447,6 +447,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

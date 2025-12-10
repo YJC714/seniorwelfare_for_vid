@@ -153,8 +153,8 @@ if not st.session_state.redeemed:
     ]
 
 def available_points():
-     return st.session_state.total_points - sum(r["點數"] for r in st.session_state.redeemed)
-
+     #return st.session_state.total_points - sum(r["點數"] for r in st.session_state.redeemed)
+     return st.session_state.total_points
 
 
 # ====================== 左側選單：4 個超大按鈕 ======================
@@ -447,6 +447,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

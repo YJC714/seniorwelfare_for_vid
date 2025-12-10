@@ -60,7 +60,7 @@ case_manager_id = user.get("case_manager")  # 例如 "wang", "lily123", None
 prescription = {
         "開立日期": "2025-12-9",
         "個管師": "高曼玉" ,
-        "處方內容": ["每天散步20分鐘，坐在椅子上做起立訓練，一天20下，每周至少參加1次社區活動或課程訓練"]
+        "處方內容": ["散步20分鐘、坐姿運動每天起立坐下20次、每周至少一次社區活動或課程"]
     }
 
 # 如果沒有處方箋，就顯示預設訊息
@@ -459,6 +459,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

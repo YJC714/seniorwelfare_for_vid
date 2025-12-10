@@ -155,7 +155,7 @@ if not st.session_state.redeemed:
 def available_points():
      #return st.session_state.total_points - sum(r["點數"] for r in st.session_state.redeemed)
      #return st.session_state.total_points
-     return 30
+     return 300
 
 
 # ====================== 左側選單：4 個超大按鈕 ======================
@@ -311,9 +311,9 @@ if st.session_state.page == "運動紀錄":
     st.plotly_chart(fig, use_container_width=True)
 
     st.divider()
-    st.metric("可用點數", f"{available_points():,} 點", "總累積30點")
+    st.metric("可用點數", f"{available_points():,} 點", "總累積300點")
     df1 = pd.DataFrame({"月份": ["12月"],
-                       "點數": ["30點"]})
+                       "點數": ["300點"]})
     st.dataframe(df1.head(20)[["月份", "點數"]], use_container_width=True, hide_index=True)
 
 
@@ -463,6 +463,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

@@ -161,7 +161,7 @@ def available_points():
 with st.sidebar:
     
     st.title(f"Hi！{st.session_state.user_name}")
-    st.metric("目前可用點數", f"{available_points():,} 點")
+    st.metric("目前可用點數0點")
     st.divider()
 
     # 4 個超大按鈕
@@ -459,6 +459,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 

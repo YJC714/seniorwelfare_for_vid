@@ -59,8 +59,8 @@ case_manager_id = user.get("case_manager")  # 例如 "wang", "lily123", None
    #     prescription = patient_pres_list[-1]  # 最新一筆
 prescription = {
         "開立日期": "2025-12-9",
-        "個管師": user.get("case_manager", "王小明") ,
-        "處方內容": ["每天散步20分鐘\n坐在椅子上做起立訓練，一天20下\n每周至少參加1次社區活動或課程訓練"]
+        "個管師": user.get("case_manager", "高曼玉") ,
+        "處方內容": ["每天散步20分鐘，坐在椅子上做起立訓練，一天20下，每周至少參加1次社區活動或課程訓練"]
     }
 
 # 如果沒有處方箋，就顯示預設訊息
@@ -90,7 +90,7 @@ for key in ["records", "redeemed", "total_points", "user_name", "page"]:
     if key not in st.session_state:
         st.session_state[key] = {
             "records": [], "redeemed": [], "total_points": 0,
-            "user_name": "陳小美", "page": "運動紀錄"
+            "user_name": "王聖德", "page": "運動紀錄"
         }[key]
 taiwan_data = {
     '臺北市': ['中正區', '大安區', '信義區', '松山區', '中山區', '中西區', '大同區', '萬華區', '文山區', '南港區', '內湖區', '士林區', '北投區'],
@@ -251,7 +251,7 @@ if st.session_state.page == "運動紀錄":
 
     # 假資料但超有感（可隨時改數字）
     reduced_bed_days = 18
-    saved_medical_cost = 28500
+    saved_medical_cost = 2850
     biological_age = 62
     beat_percentage = 87
 
@@ -441,6 +441,7 @@ elif st.session_state.page == "活動推廣":
 #elif st.session_state.page == "報名紀錄":
 
 #    st.header("報名紀錄")
+
 
 
 
